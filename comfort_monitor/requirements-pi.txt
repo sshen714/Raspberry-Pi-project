@@ -1,0 +1,3 @@
+-r requirements.txt
+adafruit-circuitpython-dht>=4,<5
+Adafruit-Blinka>=8,<9

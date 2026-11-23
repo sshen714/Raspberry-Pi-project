@@ -1,0 +1,16 @@
+[Unit]
+Description=DHT11 Room Comfort Monitor
+After=network.target
+
+[Service]
+Type=simple
+# 使用前請將使用者及下列兩個路徑改成實際設定。
+User=pi
+WorkingDirectory=/home/pi/comfort_monitor
+ExecStart=/home/pi/comfort_monitor/.venv/bin/python /home/pi/comfort_monitor/app.py --host 0.0.0.0 --port 5000 --pin 4
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
